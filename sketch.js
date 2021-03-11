@@ -3,6 +3,7 @@ let pitch;
 let audioContext;
 let mic;
 let freq=0;
+const button=  document.getElementById('button');
 function setup() {
   createCanvas(400, 400);
   audioContext=getAudioContext();
@@ -10,6 +11,7 @@ function setup() {
   mic.start(listening);
   
 }
+
 function listening(){
   console.log('listening');
   
@@ -18,6 +20,7 @@ function listening(){
   mic.stream,
   modelLoaded);
 }
+
 function touchStarted(){
 getAudioContext().resume()
 }
