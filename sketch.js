@@ -5,7 +5,7 @@ let mic;
 let freq=0;
 function setup() {
   createCanvas(400, 400);
-  audioContext=getAudioContext().resume();
+  audioContext=getAudioContext();
   mic= new p5.AudioIn();
   mic.start(listening);
   
@@ -17,6 +17,9 @@ function listening(){
   audioContext,
   mic.stream,
   modelLoaded);
+}
+function touchStarted(){
+getAudioContext().resume()
 }
 
 function gotPitch(error,frequency){
