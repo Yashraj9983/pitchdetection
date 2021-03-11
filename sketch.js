@@ -5,7 +5,7 @@ let mic;
 let freq=0;
 function setup() {
   createCanvas(400, 400);
-  audioContext=getAudioContext();
+  audioContext=getAudioContext().resume();
   mic= new p5.AudioIn();
   mic.start(listening);
   
